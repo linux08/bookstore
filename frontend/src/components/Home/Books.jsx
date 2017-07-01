@@ -30,7 +30,9 @@ class Books extends Component {
 			<div >
 				<div className="col-sm-12">
 					<div className="panel-body">
-						<div className="station"> {bookComponents}</div>
+						<div className="book">
+							<div className="station"> {bookComponents}</div>
+						</div>
 					</div>
 				</div>
 				<br />

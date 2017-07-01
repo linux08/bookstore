@@ -7,7 +7,7 @@ module.exports = {
             description: req.body.description,
             language: req.body.language,
             price: req.body.price,
-            image: req.body.image,
+            //image: req.body.image,
             publicationdate: req.body.publicationdate,
             bookavailability: req.body.bookavailability,
             category: req.body.category,
@@ -32,7 +32,7 @@ module.exports = {
         Book.destroy({
             name: req.body.name,
 
-            permission: req.body.permission
+          //  permission: req.body.permission
 
         }, (err, book) => {
             if (err) throw err;
@@ -40,7 +40,8 @@ module.exports = {
             else {
                 res.send('book deleted');
             }
-        });
+        }
+        );
 
     },
 
@@ -81,18 +82,19 @@ module.exports = {
     },
 
     search: (req, res) => {
-        //slug: req.param('slug'),
+        
         Book.findOne({ name: req.param('name') }).exec((err, book) => {
             console.log(req.param('name'));
             if (err) { throw (err); }
 
             if(book){
             res.send(book);
+            console.log(book);
             }
             
             if (!book) {
                 console.log('book not found');
-                res.send('book not found');
+                res.send({'book':'book not found'});
             }
             
         });

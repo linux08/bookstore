@@ -57,13 +57,13 @@ class Signup extends Component {
 			permission: this.state.permission
 
 		})
-			.then(function (response) {
+			.then((response)=> {
 				console.log(response);
 				alert('account succesfully created');
 				window.location.replace("/login");
 
 			})
-			.catch(function (error) {
+			.catch((error) => {
 				console.log(error);
 			});
 		console.log('component state', JSON.stringify(this.state));

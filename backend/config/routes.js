@@ -43,10 +43,9 @@ module.exports.routes = {
   //'POST    /user/create':     { controller:'ImageController',action:'upload'},
   //'GET    /user/show':     { controller:'ImageController',action:'show'},
   
-  'DELETE    /admin/remove':   { controller:'BookController',action:'delete'},
+  'DELETE    /admin/delete':   { controller:'BookController',action:'delete'},
   
   'GET     /book/list':         { controller:'BookController',action:'list'},
-  //'GET     /book/search/:name':     { controller:'BookController',action:'search'},
   'GET     /book/search':     { controller:'BookController',action:'search'},
   
   
@@ -55,6 +54,8 @@ module.exports.routes = {
   'POST      /user/update':     { controller:'UserController',action:'update'},
   'POST        /user/profile':   { controller:'UserController',action:'profile'},
   'GET        /user/list':      { controller:'UserController',action:'list'},
+   
+  'GET        /user/withtoken':      { controller:'UserController',action:'getUserWithToken'},
 
   'POST              /login':     { controller:'AuthController',action:'login'},
   'GET               /logout':    { controller:'AuthController',action:'logout'} ,

@@ -2,6 +2,22 @@ var jwt_decode = require("jwt-decode");
 
 
 module.exports = {
+
+  /*  upload :(req,res) =>{
+        req.file('nameOfRequestFieldHoldingTheFile').upload((err, uploadedFiles) => {
+            if (err)  return err;
+            let imageName = uploadedFiles[0].fileName;
+            imageName += req.user.username //append username to the url to be stored in the DB
+        //Image.create({url: imageName, ...otherParameters})
+    });
+    }
+    // uploadedFiles contain all files uploaded
+    //let imageName = uploadedFiles[0].fileName;
+    //imageName += req.user.username //append username to the url to be stored in the DB
+    //Image.create({url: imageName, ...otherParameters})
+    //});   */
+}
+
     /*upload: (req, res) => {
         const image = req.file('avatar')
         image.upload({
@@ -17,4 +33,3 @@ module.exports = {
     show: (req, res) => {
 
     } */
-}

@@ -1,5 +1,5 @@
 import decode from 'jwt-decode';
-
+import axios from 'axios';
 
 class Auth{
 
@@ -40,6 +40,10 @@ class Auth{
        const decodedToken = decode(token);
        console.log(decodedToken);
        return decodedToken;
+    }
+    static getUser(token){
+        const Id =decode(token);
+       // ax
     }
 }
 export default Auth;

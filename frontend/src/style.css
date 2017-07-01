@@ -5,19 +5,17 @@ body {
    height: 100% ;
    padding-bottom:60px;
 }
-.head{
-	 position: absolute;
+.heads{
+	position: absolute;
     right: 20px;
-    width: 200px;
-    text-align: center;
+    
+    
     
 }
 .label{
 	margin-right:10px; 
 }
-.search{
-	margin-top: 50px;
-}
+
 .header{
 	background-color:#ffcc00;
 	position: fixed;
@@ -28,6 +26,10 @@ body {
 	min-width: 660px;
 }
 .footer{
+
+   
+    margin-top: 30px;
+    padding-top: 30px;
  position:fixed;
 left:0;
 bottom:0;

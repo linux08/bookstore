@@ -11,7 +11,8 @@ module.exports = {
       required: true
     },
     images: {
-      type: 'array'
+      collection:'Image',
+      via:'book'
     },
     language: {
       type: 'string'
