@@ -10,10 +10,16 @@ module.exports = {
       type: 'string',
       required: true
     },
-    images: {
-      collection:'Image',
-      via:'book'
+    avatar: {
+      type: 'string'
     },
+    // avatarUrl: {
+    //   type: 'string'
+    // },
+    /*images: {
+        collection:'Image',
+        via:'book'
+      },*/
     language: {
       type: 'string'
     },
@@ -25,8 +31,8 @@ module.exports = {
       type: 'date'
     },
     stock: {
-      type: 'integer',
-      required: true
+      type: 'integer'//,
+      //required: true
     },
     bookavailability: {
       type: 'boolean',

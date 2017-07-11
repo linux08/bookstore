@@ -3,87 +3,53 @@ import axios from 'axios';
 
 class allUsers extends Component {
 
-    profile(e) {
-        let bookName = this.state.name;
-        let permission = this.state.permission;
-
-        axios.post('http://localhost:1337/user/profile', {
-            email: this.state.email
-        })
-            .then((response) => {
-                console.log(response);
-            }).catch((error) => {
-                console.log(error);
-            }
-        )
-
-    }
-    
-    allUser(e) {
-        axios.get('http://localhost:1337/user/list',{
-
-        })
-    }
 
     render() {
+
+        var user = this.props.users;
+        console.log(user)
+        var userComponents = user.map(function (bb) {
+            return (
+                <div className="container" key={bb.id}>
+                   
+                    <table className="table" >
+                        <tbody className="table table-condensed" >
+                            <tr>
+                                <td>{bb.firstname}</td>
+                                <td>{bb.lastname}</td>
+                                <td>{bb.email}</td>
+                                <td>{bb.phone}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            )
+        });
         return (
-            <div>
-                <div className="col-lg-4">
-                        <div className="panel panel-default">
-                            <div className="panel-heading">
-                                <h3 className="panel-title"><i className="fa fa-money fa-fw"></i> Transactions Panel</h3>
-                            </div>
-                            <div className="panel-body">
-                                <div className="table-responsive">
-                                    <table className="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Order #</th>
-                                                <th>Order Date</th>
-                                                <th>Order Time</th>
-                                                <th>Amount (USD)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                            </div>
-                        </div>
+            <div className="container">
+                <div className="table" style={{ textAlign: 'center' }}>
+                 <div className="panel-heading">
+                        <h3 className="panel-title"><i className="fa fa-user-o" aria-hidden="true"></i> User Panel</h3>
                     </div>
+                    <table className="table table-condensed " >
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                     {userComponents}  
+                </div>
             </div>
+
+
         )
     }
 }

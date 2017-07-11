@@ -37,7 +37,7 @@ module.exports.routes = {
   }, 
 
 
-  'POST    /admin/create':     { controller:'BookController',action:'create'},
+  'POST    /admin/create':     {controller:'BookController',action:'create'} ,
   'POST    /admin/update':     { controller:'BookController',action:'update'},
 
   //'POST    /user/create':     { controller:'ImageController',action:'upload'},
@@ -47,13 +47,14 @@ module.exports.routes = {
   
   'GET     /book/list':         { controller:'BookController',action:'list'},
   'GET     /book/search':     { controller:'BookController',action:'search'},
-  
-  
+
+  'GET       /book/pics':    { controller:'ImageController',action:'avatar'},
+  //'POST       /book/avatar':    { controller:'ImageController',action:'upload'},
 
   'POST       /user/create':    { controller:'UserController',action:'signup'},
   'POST      /user/update':     { controller:'UserController',action:'update'},
   'POST        /user/profile':   { controller:'UserController',action:'profile'},
-  'GET        /user/list':      { controller:'UserController',action:'list'},
+  'GET        /users/list':      { controller:'UserController',action:'list'},
    
   'GET        /user/withtoken':      { controller:'UserController',action:'getUserWithToken'},
 
@@ -61,10 +62,9 @@ module.exports.routes = {
   'GET               /logout':    { controller:'AuthController',action:'logout'} ,
 
  
-  'POST          /book/category/create':   { controller:'CategoryController',action:'create'},
- 
+  //POST          /book/category/create':   { controller:'CategoryController',action:'create'},
+'POST          /book/category/create':   { controller:'CategoryController',action:'create'}, 
 
- 
 
   'POST          /book/create/order':   { controller:'OrderController',action:'create'}
 

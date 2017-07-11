@@ -16,6 +16,8 @@ import Book from './components/Book.jsx';
 import Order from './components/Order.jsx';
 import Admin from './components/Admin.jsx';
 import Adminuser from './components/Order.jsx';
+import Adminadd from './components/Adminadd.jsx';
+
 
 render(
   <Router>
@@ -29,6 +31,7 @@ render(
       <Route path="/order" component={Order} />
       <Route path="/admin" component={Admin} />
       <Route path="/admin/user" component={Adminuser} />
+      <Route path="/addbook" component={Adminadd} />
     
     </div>
   </Router>,

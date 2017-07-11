@@ -21,9 +21,9 @@ module.exports.policies = {
 
   BookController: {
 
-    create: ['authToken', 'isAuthor'],
-    delete: ['authToken', 'isAdmin'],
-    update: ['authToken', 'isAdmin']
+   // create: ['authToken', 'isAuthor'],
+    //delete: ['authToken', 'isAdmin'],
+    //update: ['authToken', 'isAdmin']
 
   },
   CategoryController: {

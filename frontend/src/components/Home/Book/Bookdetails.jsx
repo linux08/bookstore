@@ -15,8 +15,8 @@ class Bookdetails extends Component {
             bookInfo: [],
             bookName: '',
             key: "pk_test_3def9758f8836be201916b02a597e29e4fe4be53",
-            email: "",
-            amount: 1
+            email: "customer@yahoo.com",
+            amount: ""
         }
 
     }
@@ -57,7 +57,8 @@ class Bookdetails extends Component {
             .then((response) => {
                 this.setState({
                     bookInfo: response.data,
-                    amount: response.data.price
+                    amount: response.data.price,
+                    
                 });
                 console.log(response.data);
             })
@@ -102,20 +103,25 @@ class Bookdetails extends Component {
                 </div>
                 <div className="panel panel-default">
 
-                    <div className="panel-body">
+                    
                         <div className="container">
+                        <div className="">
+                            pics
+                        </div>
                             <section className="">
-                                <ul>
-                                    <div> <li>Name: {bookid.name}</li></div>
-                                    <div> <li>description: {bookid.description}</li></div>
-                                    <div> <li>Language: {bookid.language} </li></div>
-                                    <div> <li>Price: {bookid.price}</li></div>
-                                    <div> <li>publicationdate: {bookid.publicationdate}</li></div>
+                            <div> <h2>Name: {bookid.name}</h2></div>
+                            <div>
+                                <ul class="bookInfo">
+                                    <li>description: {bookid.description}</li>
+                                     <li>Language: {bookid.language} </li>
+                                     <li>Price: {bookid.price}</li>
+                                     <li>publicationdate: {bookid.publicationdate}</li>
                                 </ul>
+                            </div>
                                 <br />
                                 <div>
                                     <p>
-                                        <PaystackButton className="btn btn-primary btn-lg"
+                                        <PaystackButton 
                                             text="Make Payment"
                                             className="payButton"
                                             callback={this.callback}
@@ -132,7 +138,7 @@ class Bookdetails extends Component {
 
                             </section>
                         </div>
-                    </div>
+                    
                 </div>
 
 

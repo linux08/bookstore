@@ -17,13 +17,17 @@ class Books extends Component {
 		console.log(bookname)
 		var bookComponents = bookname.map(function (bb) {
 			return (
-				<a href='/book/search' key={bb.id}><div className="box" >
+				<div>
 
-					<div >{bb.name} </div>
-					<div > {bb.price} </div>
-
+					<div className="box"><img src ={bb.avatarUrl}/></div>
+					<div>
+						<div >{bb.name} </div>
+						<div className="price">Buy for <span> {bb.price} </span> </div>
+					</div>
+					<a className="btn btn-lg btn-primary btn-block" href='/book/search' key={bb.id}>
+						BUY
+					</a>
 				</div>
-				</a>
 			)
 		});
 		return (

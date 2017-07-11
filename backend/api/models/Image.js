@@ -1,7 +1,7 @@
 module.exports = {
-	attributes: {
+	/*attributes: {
 		book: {
 			model: 'Book'
 		}
-	}
+	} */
 };

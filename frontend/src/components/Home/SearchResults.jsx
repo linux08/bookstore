@@ -51,17 +51,7 @@ class Bookdetails extends Component {
     render() {
 
         var bookid = this.state.bookInfo;
-        /* const Button = withRouter(({ history }) => (
-             <button type="button" className="btn btn-primary btn-lg" onClick={() => {
-                 history.push({
-                     pathname: '/order',
-                     state: { bookInfo: bookid }
-                 })
-             }}>
-                 PROCEED TO CHECK-OUT
-             </button>
-         ))
- */
+        
 
         return (
             <div className="jumbotron">

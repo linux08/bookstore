@@ -13,8 +13,6 @@ class Signup extends Component {
 
 		//set the initial state
 		this.state = {
-
-
 			firstName: '',
 			lastName: '',
 			email: '',
@@ -23,15 +21,12 @@ class Signup extends Component {
 			address: '',
 			order: '',
 			permission: 'customer'
-
-
 		};
 
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		//this.processForm = this.processForm.bind(this);
-		//this.changeUser = this.changeUser.bind(this);
+	
 	}
 
 	handleChange(e) {
