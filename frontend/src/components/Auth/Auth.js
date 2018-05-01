@@ -38,7 +38,6 @@ class Auth{
     static decodeToken(token){
       
        const decodedToken = decode(token);
-       console.log(decodedToken);
        return decodedToken;
     }
     static getUser(token){

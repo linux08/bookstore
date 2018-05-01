@@ -3,14 +3,7 @@
 module.exports = {
     create: (req, res) => {
 
-        // req.file('avatar').upload({
-        //     maxBytes: 10000000,
-        //     dirname: sails.config.appPath + '/assets/images/avatar/'
-        // }, function (err, uploadedFiles) {
-        //     if (err) return res.negotiate(err);
-        //     console.log(uploadedFiles.length + ' file(s) uploaded successfully!');
-        //     console.log(uploadedFiles);
-        //     req.body["avatar"] = uploadedFiles[0].fd;
+
 
         req.file('avatar').upload({
             // don't allow the total upload size to exceed ~10MB
@@ -56,42 +49,17 @@ module.exports = {
 
             Book.create(bookDetails).exec((err, book) => {
                 if (err) {
-                    console.log(err);
+
                 }//throw (err);
                 else {
-                    console.log(book);
+
                     res.send(book);
 
                 }
             });
-            // });
+
         });
 
-        // var bookDetails = {
-        //     name: req.body.name,
-        //     description: req.body.description,
-        //     language: req.body.language,
-        //     price: req.body.price,
-        //     avatar: req.body.avatar,
-        //     publicationdate: req.body.publicationdate,
-        //     bookavailability: req.body.bookavailability,
-        //     category: req.body.category,
-        //     orderId: req.body.orderId,
-        //     stock: req.body.stock
-
-        // };
-
-        // Book.create(bookDetails).exec((err, book) => {
-        //     if (err) {
-        //         console.log(err);
-        //     }//throw (err);
-        //     else {
-
-        //         res.send(book);
-
-        //     }
-        // });
-        //  });
 
 
     },
@@ -114,23 +82,7 @@ module.exports = {
     },
 
     list: (req, res) => {
-      /*  Book.findOne({ bookavailability: true }).exec(function (err, book) {
-            if (err) return res.negotiate(err);
-
-
-            var SkipperDisk = require('skipper-disk');
-            var fileAdapter = SkipperDisk(/* optional opts *///);
-
-            // set the filename to the same file as the book uploaded
-          //  res.set("Content-disposition", "attachment; filename='" + file.name + "'");
-           /* fileAdapter.read(book.avatarFd)
-                .on('error', function (err) {
-                    return res.serverError(err);
-                })
-                .pipe(res);*/
-               // res.send(book);
-
-       // });*/
+       
         Book.find({ bookavailability: true }, (err, book) => {
             if (err) throw (err)
 
@@ -169,16 +121,14 @@ module.exports = {
     search: (req, res) => {
 
         Book.findOne({ name: req.param('name') }).exec((err, book) => {
-            console.log(req.param('name'));
+            
             if (err) { throw (err); }
 
             if (book) {
                 res.send(book);
-                console.log(book);
             }
 
             if (!book) {
-                console.log('book not found');
                 res.send({ 'book': 'book not found' });
             }
 

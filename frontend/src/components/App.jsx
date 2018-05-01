@@ -20,7 +20,7 @@ class App extends Component {
 		getBooks().then((bookData) => {
 			this.setState({ bookData });
 		});
-		console.log(this.state.bookData);
+		
 	}
 	componentDidMount() {
 		this.getBooksData();

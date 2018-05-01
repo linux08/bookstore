@@ -22,26 +22,24 @@ class Header extends Component {
 			return null
 		}
 		const token = Auth.getToken();
-		console.log('token status' + token);
 		const decodedToken = decode(token);
 		const userId = decodedToken.id;
 		return userId;
 	}
 	getUserInfo() {
 		if(localStorage.getItem('token') == null){
-			console.log('null');
+			
 		}
 		const id = this.getId();
 		let url = 'http://localhost:1337/user/' + id;
 		axios.get(url).then((response) => {
-			console.log(response.data.email);
 			this.setState({
 				email: response.data.email
 			});
 
 		})
 			.catch((err) => {
-				console.log(err);
+				
 
 			})
 	}

@@ -21,10 +21,8 @@ class SearchInterface extends Component {
         return axios.get(url).
             then((response) => {
                 this.setState({ bookInfo: response.data });
-                console.log(this.state.bookInfo);
             }).
             catch((error) => {
-                console.log(error);
             });
 
     }

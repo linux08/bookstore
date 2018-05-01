@@ -26,10 +26,8 @@ class Search extends Component {
 		return axios.get(url).
 			then((response) => {
 				this.setState({ bookInfo: response.data });
-				console.log(this.state.bookInfo);
 			}).
 			catch((error) => {
-				console.log(error);
 			});
 
 	}
@@ -43,7 +41,6 @@ class Search extends Component {
 		}
 
 		this.getUrl();
-		//window.location.replace("/book/search");
 
 	}
 

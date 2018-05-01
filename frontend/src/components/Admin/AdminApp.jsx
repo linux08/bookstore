@@ -10,32 +10,15 @@ class allUsers extends Component {
     }
 
 
-   /* profile(e) {
-        let bookName = this.state.name;
-        let permission = this.state.permission;
-
-        axios.post('http://localhost:1337/user/profile', {
-            email: this.state.email
-        })
-            .then((response) => {
-                console.log(response);
-            }).catch((error) => {
-                console.log(error);
-            }
-            )
-
-    } */
+ 
 
     allUser() {
         const url = 'http://localhost:1337/users/list';
         return axios.get(url)
             .then((response) => {
                 this.setState({ users: response.data });
-                 console.log("setting respose.data");
-
             })
             .catch((error) => {
-                console.log(error);
             });
 
 

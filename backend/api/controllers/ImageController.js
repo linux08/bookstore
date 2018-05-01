@@ -3,14 +3,14 @@ var jwt_decode = require("jwt-decode");
 
 module.exports = {
     upload:(req,res) =>{
-        console.log('image controller working');
+      
         req.file('avatar')
             .upload({
                  maxBytes: 10000000,
                  adapter: require('skipper-disk')
             }, function whenDone(err,uploadedFiles){
                     if(err){
-                         console.log(err);
+                        
                          return res.negotiate(err);
                     }
                     if(uploadedFiles.length ===0){
@@ -27,8 +27,8 @@ module.exports = {
                     }).exec(function(err){
 
                         if (err) {
-                            console.log('how far');return res.negotiate(err)};
-                        console.log(uploadedFiles);
+                            return res.negotiate(err)};
+                       
                         return res.ok(uploadedFiles);
                     });
                 });
@@ -39,24 +39,24 @@ module.exports = {
  * (GET /book/avatar/:id)
  */
     avatar: function (req, res){
-      console.log('heeh');
+     
       req.validate({
         id: 'string'
       });
-      console.log(req.id);
+
 
      /* Book.findOne(req.param('id')).exec(function (err, book){
         if (err) return res.negotiate(err);
-        console.log(err);
+
         if (!book) return res.notFound();
-        console.log('book has no image');
+       
 
 
         // User has no avatar image uploaded.
         // (should have never have hit this endpoint and used the default image)
         if (!book.avatarFd) {
           return res.notFound();
-          console.log('book has no image');
+        
         }
 
         var SkipperDisk = require('skipper-disk');

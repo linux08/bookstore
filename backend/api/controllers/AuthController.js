@@ -3,8 +3,6 @@ var TokenAuth = require('../services/TokenAuth');
 module.exports = {
     login: function (req, res) {
         
-
-        console.log('i am here');
         var email = req.param('email');
         var password = req.param('password');
 

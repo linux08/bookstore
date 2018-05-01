@@ -26,8 +26,7 @@ class Bookdetails extends Component {
         this.getUrl();
     }
     callback = (response) => {
-        console.log('testing');
-        console.log(response);
+       
         const history = createHistory();
         const location = history.location;
         history.push({
@@ -37,7 +36,7 @@ class Bookdetails extends Component {
 
     }
     close = () => {
-        console.log("Payment closed");
+       
     }
     getReference = () => {
         let text = "Denden";
@@ -60,38 +59,14 @@ class Bookdetails extends Component {
                     amount: response.data.price,
                     
                 });
-                console.log(response.data);
+               
             })
             .catch((error) => {
-                console.log(error);
+                
             });
 
-    }/*
-    getId() {
-        console.log('token status' );
-
-        const token = Auth.getToken();
-        console.log('token status' + token);
-        const decodedToken = decode(token);
-        const userId = decodedToken.id;
-        return userId;
     }
-    getUserInfo() {
-
-        const id = this.getId();
-        let url = 'http://localhost:1337/user/' + id;
-        axios.get(url).then((response) => {
-            console.log(response.data.email);
-            this.setState({
-                email: response.data.email
-            });
-
-        })
-            .catch((err) => {
-                console.log(err);
-
-            })
-    } */
+ 
     render() {
 
         var bookid = this.state.bookInfo;

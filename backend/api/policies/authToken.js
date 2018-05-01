@@ -25,7 +25,6 @@ module.exports = function (req, res, next) {
             return res.json(401, { err: 'Invalid Token!' });
         }
         req.token = token; // This is the decrypted token or the payload you provided
-        console.log('token verified');
         next();
     });
 };

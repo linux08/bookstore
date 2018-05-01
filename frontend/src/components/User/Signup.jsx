@@ -26,7 +26,7 @@ class Signup extends Component {
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-	
+
 	}
 
 	handleChange(e) {
@@ -52,21 +52,20 @@ class Signup extends Component {
 			permission: this.state.permission
 
 		})
-			.then((response)=> {
-				console.log(response);
+			.then((response) => {
+
 				alert('account succesfully created');
 				window.location.replace("/login");
 
 			})
 			.catch((error) => {
-				console.log(error);
 			});
-		console.log('component state', JSON.stringify(this.state));
+
 
 		if (!this.showFormErrors()) {
-			console.log('form is invalid: do not submit');
+
 		} else {
-			console.log('form is valid: submit');
+
 		}
 
 	}

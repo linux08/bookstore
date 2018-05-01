@@ -37,22 +37,18 @@ class LoginForm extends Component {
 
 		})
 			.then(function (response) {
-				console.log(response.data.token);
-
+			
 				Auth.authenticateUser(response.data.token);
 				const result = Auth.decodeToken(response.data.token);
-				console.log('the result value');
-				console.log(getUserInfo(result.id));
 				window.location.replace("/")
 
 			})
 			.catch(function (error) {
-				console.log(error);
 			});
-		console.log('component state', JSON.stringify(this.state));
+		
 
 	}
-	//window.location.replace("/");
+	
 
 	render() {
 

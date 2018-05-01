@@ -9,7 +9,6 @@ class allBooks extends Component {
 
     render() {
         var book = this.props.books;
-        console.log(book)
         var bookComponents = book.map(function (bb) {
             return (
 

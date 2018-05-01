@@ -7,7 +7,7 @@ export { getBooks, getBook, getUserInfo, allUser };
 
 function allUser() {
     const url = 'http://localhost:1337/user/list';
-    return axios.get(url).then((response) => {response.data});
+    return axios.get(url).then((response) => { response.data });
 }
 
 //get books available from the Api
@@ -24,12 +24,10 @@ function getUserInfo(id) {
     const url = `${BASE_URL}/user/` + id;
     return axios.get(url)
         .then((response) => {
-            console.log(response.data);
             response.data
         }
         )
         .catch((err) => {
-            console.log(err);
-        }
-        );
+
+        });
 }

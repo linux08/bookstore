@@ -16,88 +16,7 @@ class Book extends Component {
             books: []
         }
     }
-    /*    deleteBook(e) {
-            let bookName = this.state.name;
-            let permission = this.state.permission;
-    
-            axios.post('http://localhost:1337/admin/delete', {
-                name: this.state.name,
-            })
-                .then((response) => {
-                    console.log(response.data);
-                    //this.setState={
-    
-    //                }
-                }).catch((error) => {
-                    console.log(error);
-                }
-                )
-    
-        }
-        updateBook(e) {
-            let bookName = this.state.name;
-            let permission = this.state.permission;
-    
-            axios.post('http://localhost:1337/admin/update', {
-                name: this.state.name,
-                description: this.state.description,
-                language: this.state.language,
-                price: this.state.price,
-                //image: req.body.image,
-                publicationdate: this.state.publicationdate,
-                bookavailability: this.state.bookavailability,
-                category: this.state.category
-    
-            })
-                .then((response) => {
-                    console.log(response);
-                }).catch((error) => {
-                    console.log(error);
-                }
-                )
-    
-        }
-        addBook(e) {
-            let bookName = this.state.name;
-            let permission = this.state.permission;
-    
-            axios.post('http://localhost:1337/admin/create',
-                {
-                    name: this.state.name,
-                    description: this.state.description,
-                    language: this.state.language,
-                    price: this.state.price,
-                    //image: req.body.image,
-                    publicationdate: this.state.publicationdate,
-                    bookavailability: this.state.bookavailability,
-                    category: this.state.category
-    
-                })
-                .then((response) => {
-                    console.log(response);
-                }).catch((error) => {
-                    console.log(error);
-                }
-    
-                )
-    
-    
-        }
-        /* profile(e) {
-         let bookName = this.state.name;
-         let permission = this.state.permission;
- 
-         axios.post('http://localhost:1337/user/profile', {
-             email: this.state.email
-         })
-             .then((response) => {
-                 console.log(response);
-             }).catch((error) => {
-                 console.log(error);
-             }
-             )
- 
-     } */
+  
 
 
 
@@ -106,10 +25,10 @@ class Book extends Component {
         return axios.get(url)
             .then((response) => {
                 this.setState({ books: response.data });
-                console.log("setting  book respose.data");
+               
             })
             .catch((error) => {
-                console.log(error);
+            
             });
 
     }
@@ -121,10 +40,10 @@ class Book extends Component {
         return axios.get(url)
             .then((response) => {
                 this.setState({ users: response.data });
-                console.log("setting  users respose.data");
+             
             })
             .catch((error) => {
-                console.log(error);
+              
             });
 
 

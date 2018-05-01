@@ -14,7 +14,6 @@ class Books extends Component {
 
 	render() {
 		var bookname = this.props.bookData;
-		console.log(bookname)
 		var bookComponents = bookname.map(function (bb) {
 			return (
 				<div>

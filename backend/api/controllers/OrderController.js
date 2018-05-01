@@ -13,7 +13,6 @@ module.exports = {
 
                     if (!book) {
                         res.send('book is not available');
-                        console.log('book is not available');
                     }
                     return next(null);
                 });
@@ -28,7 +27,7 @@ module.exports = {
                     if (err) return next(err);
 
                     if (req.body.payment <= (book.price * req.body.quantity)) {
-                        console.log('invalid payment');
+
                         return res.send({ message: 'invalid payment' });
                     }
                     return next(null);
@@ -39,7 +38,7 @@ module.exports = {
                     if (err) return next(err);
 
                     if (req.body.quantity >= book.stock) {
-                        console.log('invalid payment');
+
                         return res.send({ message: 'THE QUANTITY YOU REQUESTED FOR IS NOT AVAILABLE' });
 
                     }
@@ -75,8 +74,6 @@ module.exports = {
                         orderInfo.book = book.name;
                         Order.create(orderInfo).exec((err, order) => {
                             User.findOne({ id: decoded.id }).populate('order').exec((err, orderl) => {
-                                console.log(order);
-
                             });
                         });
                         return next(null);

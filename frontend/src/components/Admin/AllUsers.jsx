@@ -7,7 +7,7 @@ class allUsers extends Component {
     render() {
 
         var user = this.props.users;
-        console.log(user)
+        
         var userComponents = user.map(function (bb) {
             return (
                 <div className="container" key={bb.id}>

@@ -23,15 +23,14 @@ class Bookdetails extends Component {
     }
 
     onClick(e) {
-        console.log('on click ');
+       
         const history = createHistory();
         //history
         history.push({
             pathname:'/order',
             state:{message:'h'}
         })
-       // const location = 
-       //history.push(location);
+     
     }
     getUrl() {
 
@@ -40,10 +39,9 @@ class Bookdetails extends Component {
         return axios.get(url).
             then((response) => {
                 this.setState({ bookInfo: response.data });
-                console.log(this.state.bookInfo);
+                
             }).
             catch((error) => {
-                console.log(error);
             });
 
     }
